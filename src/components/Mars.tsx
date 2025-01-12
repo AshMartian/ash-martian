@@ -151,8 +151,46 @@ function MarsRenderer({ mousePosition, scrollPosition }: MarsRendererProps) {
   });
 
   return (
-    <Sphere args={[2, 256, 256]} ref={meshRef}>
-      <shaderMaterial attach="material" args={[shaderArgs]} />
-    </Sphere>
+    <>
+      {/* Atmosphere glow */}
+      <Sphere args={[2.1, 64, 64]}>
+        <shaderMaterial
+          transparent={true}
+          blending={THREE.AdditiveBlending}
+          side={THREE.BackSide}
+          depthWrite={false}
+          uniforms={{
+            glowColor: { value: new THREE.Color('#3fe3ff') },
+            viewVector: { value: new THREE.Vector3(0, 0, 1) },
+          }}
+          vertexShader={`
+            varying float intensity;
+            uniform vec3 viewVector;
+
+            void main() {
+              vec3 vNormal = normalize(normalMatrix * normal);
+              vec3 vNormel = normalize(normalMatrix * viewVector);
+              // Calculate fresnel effect based on view angle
+              float fresnel = 1.0 - abs(dot(vNormal, vNormel));
+              // Adjust the power and scale for a more even glow
+              intensity = pow(fresnel, 4.0) * 0.6;
+              gl_Position = projectionMatrix * modelViewMatrix * vec4(position, 1.0);
+            }
+          `}
+          fragmentShader={`
+            uniform vec3 glowColor;
+            varying float intensity;
+
+            void main() {
+              vec3 glow = glowColor * intensity;
+              gl_FragColor = vec4(glow, intensity);
+            }
+          `}
+        />
+      </Sphere>
+      <Sphere args={[2, 256, 256]} ref={meshRef}>
+        <shaderMaterial attach="material" args={[shaderArgs]} />
+      </Sphere>
+    </>
   );
 }
