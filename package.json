@@ -6,7 +6,7 @@
   "scripts": {
     "dev": "vite",
     "build": "tsc -b && vite build",
-    "lint": "eslint . && prettier --log-level silent --write .",
+    "lint": "tsc --project ./tsconfig.json --noEmit && prettier --log-level silent --write . && eslint .",
     "preview": "vite preview"
   },
   "dependencies": {

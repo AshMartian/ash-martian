@@ -8,36 +8,50 @@ import {
 import * as THREE from 'three';
 import { TextureLoader } from 'three';
 import {
+  MousePosition,
   useMousePosition,
   useScrollPosition,
 } from '~/hooks';
 
-import { Sphere } from '@react-three/drei';
+import {
+  OrbitControls,
+  Sphere,
+} from '@react-three/drei';
 import {
   Canvas,
   useFrame,
   useLoader,
 } from '@react-three/fiber';
 
-export function Mars() {
-  return (
-    <div className="fixed top-0 left-0 w-full h-full">
-      <Canvas>
-        <fog attach="fog" args={['white', 50, 190]} />
+import { Stars } from './Stars';
 
-        <ambientLight intensity={0.3} />
-        <spotLight position={[5, 5, 5]} angle={0.3} penumbra={1} decay={0} intensity={2.0} />
-        <pointLight position={[-10, -10, -10]} intensity={1.0} />
-        <MarsRenderer />
+export function Mars() {
+  const mousePosition = useMousePosition();
+  const scrollPosition = useScrollPosition();
+
+  return (
+    <div className="fixed top-0 left-0 w-full h-full bg-black">
+      <Canvas camera={{ position: [0, 0, 8], fov: 45 }}>
+        <color attach="background" args={['#000000']} />
+
+        <ambientLight intensity={0.1} />
+
+        <MarsRenderer mousePosition={mousePosition} scrollPosition={scrollPosition} />
+        <Stars mousePosition={mousePosition} scrollPosition={scrollPosition} />
+
+        <OrbitControls enableZoom={false} enablePan={false} enableRotate={false} />
       </Canvas>
     </div>
   );
 }
 
-function MarsRenderer() {
+interface MarsRendererProps {
+  mousePosition: MousePosition;
+  scrollPosition: number;
+}
+
+function MarsRenderer({ mousePosition, scrollPosition }: MarsRendererProps) {
   const meshRef = useRef<THREE.Mesh>(null);
-  const mousePosition = useMousePosition();
-  const scrollPosition = useScrollPosition();
   const marsTexture = useLoader(TextureLoader, '/mars_2k_color.jpg');
   const marsHeightmap = useLoader(TextureLoader, '/mars_2k_topo.jpg');
   const marsNormalMap = useLoader(TextureLoader, '/mars_2k_normal.jpg');
@@ -51,7 +65,7 @@ function MarsRenderer() {
         displacementMap: { value: marsHeightmap },
         normalMap: { value: marsNormalMap },
         displacementScale: { value: displacementScale },
-        lightPosition: { value: new THREE.Vector3(5, 5, 5) },
+        lightPosition: { value: new THREE.Vector3() },
       },
       vertexShader: `
         uniform sampler2D displacementMap;
@@ -88,7 +102,7 @@ function MarsRenderer() {
         varying vec3 vTangent;
         varying vec3 vBitangent;
 
-        void main() {
+        void main() {          
           // Get the surface normal from the normal map
           vec3 normalColor = texture2D(normalMap, vUv).xyz * 2.0 - 1.0;
           mat3 TBN = mat3(vTangent, vBitangent, vNormal);
@@ -99,13 +113,13 @@ function MarsRenderer() {
           float diffuse = max(dot(worldNormal, lightDir), 0.0);
 
           // Ambient light
-          float ambient = 0.3;
+          float ambient = 0.15;
 
           // Specular highlights
           vec3 viewDir = vec3(0.0, 0.0, 1.0);
           vec3 reflectDir = reflect(-lightDir, worldNormal);
-          float spec = pow(max(dot(viewDir, reflectDir), 0.0), 32.0);
-          float specular = 0.5 * spec;
+          float spec = pow(max(dot(viewDir, reflectDir), 0.0), 64.0);
+          float specular = 0.2 * spec;
 
           // Combine lighting with texture
           vec4 color = texture2D(colorMap, vUv);
@@ -114,7 +128,7 @@ function MarsRenderer() {
         }
       `,
     }),
-    [marsTexture, marsHeightmap, marsNormalMap, displacementScale]
+    [marsTexture, marsHeightmap, marsNormalMap]
   );
 
   useFrame(() => {
@@ -123,6 +137,16 @@ function MarsRenderer() {
       // Add subtle mouse-based rotation
       meshRef.current.rotation.y += (mousePosition.x * 0.02 - meshRef.current.rotation.y) * 0.2;
       meshRef.current.rotation.x += (-mousePosition.y * 0.03 - meshRef.current.rotation.x) * 0.3;
+    }
+
+    // Update light position in shader
+    if (meshRef.current?.material) {
+      const material = meshRef.current.material as THREE.ShaderMaterial;
+      material.uniforms.lightPosition.value.set(
+        (meshRef.current.rotation.y + mousePosition.x) * 5,
+        (meshRef.current.rotation.x + mousePosition.y) * 5,
+        8
+      );
     }
   });
 

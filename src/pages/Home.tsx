@@ -1,9 +1,4 @@
-import {
-  Header,
-  Hero,
-  Mars,
-  Projects,
-} from '~/components';
+import { Header, Hero, Mars, Projects } from '~/components';
 
 export function Home() {
   return (
