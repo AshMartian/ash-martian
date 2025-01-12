@@ -1,12 +1,14 @@
-import { Header, Hero, Mars, Projects } from '~/components';
-import { useScrollPosition } from '~/hooks/useScrollPosition';
+import {
+  Header,
+  Hero,
+  Mars,
+  Projects,
+} from '~/components';
 
 export function Home() {
-  const scrollPosition = useScrollPosition();
-
   return (
     <main className="min-h-screen bg-black text-white overflow-hidden">
-      <Mars scrollPosition={scrollPosition} />
+      <Mars />
       <div className="relative z-10">
         <Header />
         <Hero />
