@@ -1,0 +1,109 @@
+﻿Ash Martian [she/them]
+(253) 592-9341
+career@ashmartian.com 
+6334 Hamma Hamma LN NE, Bremerton, WA 98311
+  
+https://ashmartian.com -    Linkedin -   𝕏  -   Github
+	
+
+	
+
+Objective
+________________
+Passionate engineer driven by a love for technology and innovation. Over 6 years enhancing education through IT at Peninsula School District, 3 years developing cutting-edge B2B applications at BCG, and currently elevating educational experiences at CharacterStrong with a mission to make kindness normal. Lifelong learner and tinkerer with a deep interest in electronics, Ai/Ml, and 3D printing. Skilled in full-stack development, cloud deployments, and cross-platform mobile apps. Aiming to contribute significantly to aerospace or robotics with a focus on Ai, ultimately supporting Moon/Mars colonization efforts. 
+Skills
+________________
+Fluent In
+* Bash / Unix command line and scripting
+* Infrastructure-as-code, Pulumi / Terraform
+* AWS / Azure / GCP and their APIs
+* Serverless cloud deployments + Kubernetes
+* Nginx / WAF / end-to-end encryption
+* Typescript - NodeJS / React
+* Building and utilizing REST APIs
+* DynamoDB / MongoDB / MySQL / Postgres
+* SAML / OAuth
+* Test driven development / Integration Tests
+* CI Automation (GitHub Actions, GitLab)
+* Build tools npm / pip / maven
+* Git Flow and Agile Methodology
+* Visual Studio Code / Figma
+	Experienced in
+* C# / Python / JupyterHub / Java
+* GraphQL/MSSQL/Elasticsearch/Datadog
+* Cryptography standards
+* CAD software (Blender/Fusion 360/Unity/Unreal)
+* Slack Bots for service monitoring 
+* DIY Hardware / Arduino / Raspberry Pi
+
+
+Experimented with
+* Tensorflow / Python ML training / ComfyUI / SDXL + LORA training
+* Golang / Ruby
+* C / C++
+	
+
+Additional Skills
+* Managed large engineering team, providing code review and guiding towards elegant solutions
+* Ability to quickly understand and adapt to new languages and technologies
+* Comprehensive understanding of networking technologies and creating innovative solutions
+* Strong work ethic and keen eye for detail, enjoys creating new solutions with minimal guidance
+* Rapid learner with “technology won’t defeat me” attitude, leveraging the power of habit
+* Experience managing Linux, Windows, and OSX infrastructures
+
+
+A few key highlights from my current position include the development of a fully automated CI/CD GitFlow pipeline at CharacterStrong, incorporating required tests, ESLint, and code coverage metrics that enforce upward trends via automation. Additionally, I led the creation of an ElasticSearch/DynamoDB backend with a React frontend internal portal, streamlining internal operations with a data-driven UX. I am so incredibly proud of the dozen engineers that I have mentored throughout the years. 
+
+
+My personal projects, such as tinkering with 3D printing and hardware prototyping, consistently inspire innovative solutions in my professional work, allowing me to rapidly prototype and iterate on new ideas. This blend of professional expertise and personal passion uniquely positions me to drive significant advancements in aerospace and robotics utilizing a mixture of technical efficiency and guiding a team to success.
+History
+________________
+CharacterStrong - Sr. Platform Architect        October 2021-Present
+* Pioneered the technical team as the first full-time engineer, scaling it to an 18-engineer powerhouse within a 90+ employee organization. From 16k user sessions per month, to over 200k.
+* Automated CI/CD pipeline and implemented IAC using Pulumi, enhancing developer efficiency.
+* Directed the development of a comprehensive Backend Serverless API with auto-generated documentation, robust SDK, RBAC, and SAML integration.
+* Integrated Elasticsearch for real-time analytics, providing detailed reports for school district stakeholders.
+* Created a React-based curriculum editor, an intuitive data-driven CMS, enabling scalable and efficient product development using reusable/configurable component sections. 
+* Promoted a first-principles approach to problem-solving, fostering innovation and ambitious goal achievement on tight timelines.
+Boston Consulting Group - Sr. Software Engineer (Digital Ventures → Gamma)  July 2018 - October 2021
+* Engineered fully automated Kubernetes/Cloud infrastructures for multi-million dollar SAAS projects, enhancing product scalability and security.
+* Played key roles in full-stack development and DevOps for North America at Digital Ventures.
+* Advanced DevOps practices, achieving fully automated one-click product deployments using Typescript.
+* Ensured high security standards with end-to-end TLS, Kubernetes scanning/policies, WAF, Datadog, and Veracode.
+* Deployed Machine Learning products capable of processing 500k data points per minute within autoscaled Kubernetes environments.
+* Orchestrated hundreds of production deployments across highly complex products.
+Peninsula School District – Data Integration Analyst                July 2011 – 2018
+* Managed and deployed Linux, PC, and MacOS systems for over 5,000 devices, serving 50k requests per day.
+* Utilized ticketing software to address thousands of user tickets, delivering highly praised customer service.
+* Collaborated closely within a small team, often taking on strong leadership roles.
+* Developed creative open-source solutions to organizational challenges, enhancing overall efficiency.
+* Recognized as a top 10 AWS user in the US education sector, 
+* Developed in-house software serving hundreds of thousands of requests monthly, including a forgotten password tool and digital signage solutions.
+* Expertise in Docker Swarm orchestration, AWS EFS shared volumes, and nginx load balancing.
+* Engineer KGHP-FM radio station. Specializing in network streaming technologies including Liquidsoap/Icecast
+Blufish LLC. – Software Engineer                Hobby Project December 2012 – 2020
+* Architected full-stack web-based solutions for conference planning, facilitating seamless organization of annual conferences with 400+ attendees.
+* Hosted DIY Makerspace events for Raspberry Pi soldering and tinkering.
+* Leveraged AWS, NodeJS, EmberJS, and Material Design language to create custom solutions.
+Happy LEAF - Android App for Nissan LEAF OBD Data                Hobby Project March 2017
+* Developed an Ember-based front end on Cordova for real-time OBD data visualization, enabling global usage with localization for all first-generation LEAF models.
+________________
+
+
+
+
+Conferences
+OSCON 2014
+ACPE 2014-2016
+ACPE 2017 - Speaker: SAML IDP running in Docker.
+Multiple MongoDB/ElasticSearch meetups
+MacAdmins 2015
+Dockercon 2016
+Amazon Alexa Meetup 
+	Audiobooks
+How to create a Mind - Ray Kurtzweil
+Something Deeply Hidden - Steven Weinberg
+The Case for Space - Robert Zubrin
+Until the End of Time / Fabric of the Cosmos - Brian Greene
+Life 3.0 / Our Mathematical Universe - Max Tegmark
+Many books by Michio Kaku, Sean Carroll, Isaac Asimov

@@ -7,7 +7,7 @@ import {
 
 export function Header() {
   return (
-    <header className="fixed top-0 left-0 right-0 z-50 bg-black bg-opacity-50 backdrop-blur-md">
+    <header className="fixed top-0 left-0 right-0 z-50 bg-black bg-opacity-20 backdrop-blur-lg">
       <nav className="container mx-auto px-6 py-4 flex justify-between items-center">
         <a href="/" className="text-2xl font-bold">
           Ash Martian
