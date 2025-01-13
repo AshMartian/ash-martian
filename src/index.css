@@ -6,4 +6,9 @@ h1,
 h2,
 .hero {
   text-shadow: 1px 3px 5px rgba(0, 0, 0, 80%);
+  user-select: none;
+}
+
+* {
+  user-select: none;
 }
