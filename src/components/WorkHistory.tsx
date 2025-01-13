@@ -21,7 +21,7 @@ const history: WorkHistoryItem[] = [
     startYear: 2011,
     endYear: 2018,
     description: [
-      'Managed 5,000+ devices serving 50k requests daily',
+      'Deployed software + imaging for 5,000+ devices',
       'Top 10 AWS education sector user in US',
       'Developed in-house solutions serving 100k+ monthly requests',
       'Engineered KGHP-FM radio station digital AutoDJ infrastructure',
@@ -51,10 +51,10 @@ const history: WorkHistoryItem[] = [
     startYear: 2021,
     endYear: 2024,
     description: [
-      'Scaled from 16k to 200k+ monthly user sessions',
-      'Led growth from 1 to 18 engineers, 20 to 100 employees',
+      'Scaled startup from 16k to 200k+ monthly user sessions',
       'Implemented comprehensive Backend Serverless API',
       'Created data-driven curriculum CMS',
+      'Led growth from 1 to 18 engineers, 20 to 100 employees',
     ],
   },
   {
@@ -67,9 +67,9 @@ const history: WorkHistoryItem[] = [
     endYear: new Date().getFullYear(),
     description: [
       'Developing software for Engines Department',
-      'Serving as Tech lead for 10+ engineers',
+      'Serving as Tech lead setting software standards',
       'Deploying design-critical software systems',
-      'Optimizing for performance and reliability',
+      'Optimizing for UX, performance and reliability',
     ],
   },
 ];
