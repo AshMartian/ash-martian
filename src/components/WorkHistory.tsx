@@ -15,7 +15,7 @@ const history: WorkHistoryItem[] = [
   {
     company: 'Peninsula School District',
     title: 'Data Integration Analyst',
-    image: '/psd-logo.png',
+    image: '/images/psd-logo.png',
     url: 'https://www.psd401.net',
     period: '2011 - 2018',
     startYear: 2011,
@@ -30,7 +30,7 @@ const history: WorkHistoryItem[] = [
   {
     company: 'Boston Consulting Group',
     title: 'Sr. Software Engineer',
-    image: '/bcg-logo.png',
+    image: '/images/bcg-logo.png',
     url: 'https://www.bcg.com',
     period: '2018 - 2021',
     startYear: 2018,
@@ -45,7 +45,7 @@ const history: WorkHistoryItem[] = [
   {
     company: 'CharacterStrong',
     title: 'Sr. Platform Architect',
-    image: '/cs-logo.png',
+    image: '/images/cs-logo.png',
     url: 'https://characterstrong.com',
     period: '2021 - 2024',
     startYear: 2021,
@@ -60,7 +60,7 @@ const history: WorkHistoryItem[] = [
   {
     company: 'Blue Origin',
     title: 'Lead Software Engineer',
-    image: '/blue-logo.png',
+    image: '/images/blue-logo.png',
     url: 'https://www.blueorigin.com',
     period: '2024 - Present',
     startYear: 2024,

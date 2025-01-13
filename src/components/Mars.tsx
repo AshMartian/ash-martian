@@ -1,13 +1,27 @@
 'use client';
 
-import { useMemo, useRef } from 'react';
+import {
+  useMemo,
+  useRef,
+} from 'react';
 
 import * as THREE from 'three';
 import { TextureLoader } from 'three';
-import { MousePosition, useMousePosition, useScrollPosition } from '~/hooks';
+import {
+  MousePosition,
+  useMousePosition,
+  useScrollPosition,
+} from '~/hooks';
 
-import { OrbitControls, Sphere } from '@react-three/drei';
-import { Canvas, useFrame, useLoader } from '@react-three/fiber';
+import {
+  OrbitControls,
+  Sphere,
+} from '@react-three/drei';
+import {
+  Canvas,
+  useFrame,
+  useLoader,
+} from '@react-three/fiber';
 
 import { Stars } from './Stars';
 
@@ -38,9 +52,9 @@ interface MarsRendererProps {
 
 function MarsRenderer({ mousePosition, scrollPosition }: MarsRendererProps) {
   const meshRef = useRef<THREE.Mesh>(null);
-  const marsTexture = useLoader(TextureLoader, '/mars_2k_color.jpg');
-  const marsHeightmap = useLoader(TextureLoader, '/mars_2k_topo.jpg');
-  const marsNormalMap = useLoader(TextureLoader, '/mars_2k_normal.jpg');
+  const marsTexture = useLoader(TextureLoader, '/images/3d/mars_2k_color.jpg');
+  const marsHeightmap = useLoader(TextureLoader, '/images/3d/mars_2k_topo.jpg');
+  const marsNormalMap = useLoader(TextureLoader, '/images/3d/mars_2k_normal.jpg');
 
   const displacementScale = 0.15;
 

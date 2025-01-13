@@ -55,7 +55,7 @@ const links: SocialLink[] = [
 
 export function SocialLinks() {
   return (
-    <section className="py-20 min-h-[50vh] flex flex-col justify-center">
+    <section className="py-20 min-h-[90vh] flex flex-col justify-center">
       <div className="container mx-auto px-6">
         <h2 className="text-4xl font-bold mb-12 text-center [text-shadow:_0_3px_5px_rgb(0_0_0_/_80%)]">
           Connect With Me

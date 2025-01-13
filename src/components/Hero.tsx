@@ -8,7 +8,7 @@ export function Hero() {
     >
       <div className="text-center">
         <img
-          src="/cyber.jpg"
+          src="/images/cyber.jpg"
           alt="Ash Martian"
           className="w-[60%] md:w-[20%] h-auto mx-auto rounded-full mb-8 shadow-2xl border-4 border-white"
         />

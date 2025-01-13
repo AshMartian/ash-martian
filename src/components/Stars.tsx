@@ -1,4 +1,7 @@
-import { useMemo, useRef } from 'react';
+import {
+  useMemo,
+  useRef,
+} from 'react';
 
 import * as THREE from 'three';
 import { MousePosition } from '~/hooks/useMousePosition';
@@ -17,7 +20,7 @@ export function Stars({ count = 5000, mousePosition, scrollPosition }: StarsProp
   const opacities = useRef(new Float32Array(count));
   const alphas = useRef(new Float32Array(count));
   const frequencies = useRef(new Float32Array(count));
-  const starTexture = useMemo(() => new THREE.TextureLoader().load('/star.png'), []);
+  const starTexture = useMemo(() => new THREE.TextureLoader().load('/images/3d/star.png'), []);
   const twinkleOffsets = useRef(new Float32Array(count));
 
   const particlesPosition = useMemo(() => {

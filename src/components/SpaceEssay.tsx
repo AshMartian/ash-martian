@@ -6,7 +6,7 @@ export function SpaceEssay() {
       </h2>
       <div className="max-w-4xl mx-auto">
         <div className="bg-black/40 backdrop-blur-lg rounded-lg p-8 space-y-6">
-          <img src="/new-shepard.jpg" alt="Mars" className="w-full rounded-lg" />
+          <img src="/images/new-shepard.jpg" alt="Mars" className="w-full rounded-lg" />
           <p className="text-lg leading-relaxed">
             For as long as I can remember, I have been captivated by the universe and the mechanics
             behind how things work. This fascination began at age six, taking apart toys to
