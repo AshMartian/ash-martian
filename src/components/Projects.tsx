@@ -1,7 +1,4 @@
-import {
-  Card,
-  CardProps,
-} from './ui/Card';
+import { Card, CardProps } from './ui/Card';
 
 const projects: CardProps[] = [
   {

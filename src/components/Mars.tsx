@@ -1,27 +1,13 @@
 'use client';
 
-import {
-  useMemo,
-  useRef,
-} from 'react';
+import { useMemo, useRef } from 'react';
 
 import * as THREE from 'three';
 import { TextureLoader } from 'three';
-import {
-  MousePosition,
-  useMousePosition,
-  useScrollPosition,
-} from '~/hooks';
+import { MousePosition, useMousePosition, useScrollPosition } from '~/hooks';
 
-import {
-  OrbitControls,
-  Sphere,
-} from '@react-three/drei';
-import {
-  Canvas,
-  useFrame,
-  useLoader,
-} from '@react-three/fiber';
+import { OrbitControls, Sphere } from '@react-three/drei';
+import { Canvas, useFrame, useLoader } from '@react-three/fiber';
 
 import { Stars } from './Stars';
 

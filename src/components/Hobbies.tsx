@@ -24,7 +24,7 @@ const hobbies: CardProps[] = [
   {
     title: '3D Printing',
     description:
-      'Creating functional prints and prototypes, specializing in space-related models and practical engineering solutions.',
+      'Creating functional prints since 2012, specializing in space-related models and practical engineering solutions.',
     image: '/images/3d-printing.png',
     url: 'https://www.thingiverse.com/ashmartian/designs',
     icon: <IconBrandThingiverse />,
