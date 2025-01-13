@@ -119,7 +119,7 @@ function MarsRenderer({ mousePosition, scrollPosition }: MarsRendererProps) {
 
   useFrame(() => {
     if (meshRef.current) {
-      meshRef.current.rotation.x = scrollPosition * 0.001;
+      meshRef.current.rotation.y = scrollPosition * 0.001;
       // Add subtle mouse-based rotation
       meshRef.current.rotation.y += (mousePosition.x * 0.02 - meshRef.current.rotation.y) * 0.2;
       meshRef.current.rotation.x += (-mousePosition.y * 0.03 - meshRef.current.rotation.x) * 0.3;
@@ -129,8 +129,8 @@ function MarsRenderer({ mousePosition, scrollPosition }: MarsRendererProps) {
     if (meshRef.current?.material) {
       const material = meshRef.current.material as THREE.ShaderMaterial;
       material.uniforms.lightPosition.value.set(
-        (meshRef.current.rotation.y + mousePosition.x) * 5,
-        (meshRef.current.rotation.x + mousePosition.y) * 5,
+        -scrollPosition * 0.02 + mousePosition.x * 5,
+        mousePosition.y * 5,
         8
       );
     }

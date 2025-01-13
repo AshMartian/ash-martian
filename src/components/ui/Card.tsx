@@ -3,17 +3,21 @@ export interface CardProps {
   description: string;
   image?: string;
   url?: string;
+  icon?: React.ReactNode;
 }
 
-export function Card({ title, description, image, url }: CardProps) {
+export function Card({ title, description, image, url, icon }: CardProps) {
   const content = (
     <>
       {image && (
-        <div className="w-full h-48 mb-4 overflow-hidden rounded-lg">
+        <div className="w-full h-52 mb-4 overflow-hidden rounded-lg">
           <img src={image} alt={title} className="w-full h-full object-cover" />
         </div>
       )}
-      <h3 className="text-2xl font-bold mb-4">{title}</h3>
+      <h3 className="text-2xl font-bold mb-4 flex items-center gap-2">
+        {!!icon && <span>{icon}</span>}
+        {title}
+      </h3>
       <p>{description}</p>
     </>
   );

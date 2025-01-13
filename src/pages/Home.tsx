@@ -1,4 +1,4 @@
-import { Header, Hero, Mars, Projects } from '~/components';
+import { Header, Hero, Hobbies, Mars, Projects, WorkHistory } from '~/components';
 
 export function Home() {
   return (
@@ -7,7 +7,9 @@ export function Home() {
       <div className="relative z-10">
         <Header />
         <Hero />
+        <Hobbies />
         <Projects />
+        <WorkHistory />
       </div>
     </main>
   );

@@ -49,7 +49,7 @@ export function Stars({ count = 5000, mousePosition, scrollPosition }: StarsProp
   useFrame(() => {
     if (points.current) {
       // Rotate stars in opposition to Mars to create parallax effect
-      points.current.rotation.x = scrollPosition * 0.001;
+      points.current.rotation.y = scrollPosition * 0.001;
       points.current.rotation.y += (mousePosition.x * 0.02 - points.current.rotation.y) * 0.2;
       points.current.rotation.x += (-mousePosition.y * 0.03 - points.current.rotation.x) * 0.3;
     }

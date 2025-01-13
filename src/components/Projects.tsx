@@ -1,27 +1,48 @@
-import { Card } from './ui/Card';
+import {
+  Card,
+  CardProps,
+} from './ui/Card';
+
+const projects: CardProps[] = [
+  {
+    title: 'Cybertruck Simulator',
+    description: 'Drive the cybertruck anywhere on Mars',
+    image: '/cybertruck-preview.png',
+    url: 'https://cybertruck.ashmartian.com/',
+  },
+  {
+    title: 'Voice Feedback',
+    description: 'Realtime machine learned feedback for voice training',
+    image: '/voice-preview.png',
+    url: 'https://voice.ashmartian.com/',
+  },
+  {
+    title: 'ComfyUI DirGir',
+    description: 'Utility nodes to get directories right in ComfyUI',
+    image: '/comfyui-preview.png',
+    url: 'https://github.com/AshMartian/ComfyUI-DirGir',
+  },
+  {
+    title: '𝕏 Schedule Helper',
+    description: 'A chrome plugin to help schedule posts on 𝕏',
+    image: '/x-schedule-preview.png',
+    url: 'https://github.com/AshMartian/x-schedule-helper',
+  },
+  {
+    title: 'Happy LEAF',
+    description: 'A visually appealing OBD2 reader for the Nissan LEAF',
+    image: '/happy-leaf-preview.png',
+    url: 'https://github.com/AshMartian/HappyLeaf',
+  },
+  {
+    title: 'Node Red Sense',
+    description: 'A node red plugin to query data from Sense energy monitors',
+    image: '/sense-preview.png',
+    url: 'https://github.com/AshMartian/node-red-unofficial-sense',
+  },
+];
 
 export function Projects() {
-  const projects = [
-    {
-      title: 'Cybertruck Simulator',
-      description: 'An interactive web-based Cybertruck simulator',
-      image: '/cybertruck-preview.png',
-      url: 'https://cybertruck.ashmartian.com/',
-    },
-    {
-      title: 'ComfyUI DirGir',
-      description: 'A workflow management tool for ComfyUI',
-      image: '/comfyui-preview.png',
-      url: 'https://github.com/AshMartian/ComfyUI-DirGir',
-    },
-    {
-      title: '𝕏 Schedule Helper',
-      description: 'A tool to help schedule posts on X (formerly Twitter)',
-      image: '/x-schedule-preview.png',
-      url: 'https://github.com/AshMartian/x-schedule-helper',
-    },
-  ];
-
   return (
     <section className="py-20">
       <div className="container mx-auto px-6">
