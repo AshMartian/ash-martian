@@ -10,7 +10,7 @@ export function Hero() {
         <img
           src="/cyber.jpg"
           alt="Ash Martian"
-          className="w-[20%] h-auto mx-auto rounded-full mb-8 shadow-2xl border-4 border-white"
+          className="w-[60%] md:w-[20%] h-auto mx-auto rounded-full mb-8 shadow-2xl border-4 border-white"
         />
         <h1 className="text-5xl font-bold mb-4">Ash Martian</h1>
         <h2 className="text-2xl mb-8">Tech Enthusiast & Blue Origin Engineer</h2>
