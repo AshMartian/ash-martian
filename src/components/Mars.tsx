@@ -129,7 +129,8 @@ function MarsRenderer({ mousePosition, scrollPosition }: MarsRendererProps) {
     if (meshRef.current?.material) {
       const material = meshRef.current.material as THREE.ShaderMaterial;
       material.uniforms.lightPosition.value.set(
-        -scrollPosition * 0.02 + mousePosition.x * 5,
+        //-scrollPosition * 0.02 +
+        mousePosition.x * 5,
         mousePosition.y * 5,
         8
       );

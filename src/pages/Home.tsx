@@ -1,4 +1,13 @@
-import { Header, Hero, Hobbies, Mars, Projects, WorkHistory } from '~/components';
+import {
+  Header,
+  Hero,
+  Hobbies,
+  Mars,
+  Projects,
+  SocialLinks,
+  SpaceEssay,
+  WorkHistory,
+} from '~/components';
 
 export function Home() {
   return (
@@ -10,6 +19,8 @@ export function Home() {
         <Hobbies />
         <Projects />
         <WorkHistory />
+        <SpaceEssay />
+        <SocialLinks />
       </div>
     </main>
   );
