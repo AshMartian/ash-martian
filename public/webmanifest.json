@@ -1,0 +1,14 @@
+{
+  "name": "Ash Martian",
+  "icons": [
+    {
+      "src": "https://ashmartian.com/images/favicon.png",
+      "sizes": "300x300",
+      "type": "image/png"
+    }
+  ],
+  "start_url": "/index.html",
+  "display": "standalone",
+  "background_color": "#000000",
+  "theme_color": "#000000"
+}
