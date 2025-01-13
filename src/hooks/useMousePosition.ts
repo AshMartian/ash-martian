@@ -1,4 +1,7 @@
-import { useEffect, useState } from 'react';
+import {
+  useEffect,
+  useState,
+} from 'react';
 
 export interface MousePosition {
   x: number;
@@ -23,7 +26,22 @@ export function useMousePosition() {
   useEffect(() => {
     // Check if device orientation is supported
     if (window.DeviceOrientationEvent) {
-      window.addEventListener('deviceorientation', handleDeviceOrientation);
+      // Request permission for iOS devices
+      const DeviceOrientationEventiOS = DeviceOrientationEvent as unknown as {
+        requestPermission?: () => Promise<'granted' | 'denied' | 'default'>;
+      };
+      if (typeof DeviceOrientationEventiOS.requestPermission === 'function') {
+        DeviceOrientationEventiOS.requestPermission()
+          .then((permissionState) => {
+            if (permissionState === 'granted') {
+              window.addEventListener('deviceorientation', handleDeviceOrientation);
+            }
+          })
+          .catch(console.error);
+      } else {
+        // Non iOS 13+ devices
+        window.addEventListener('deviceorientation', handleDeviceOrientation);
+      }
     }
 
     const updateMousePosition = (e: MouseEvent) => {

@@ -6,7 +6,7 @@ export function Hero() {
         minHeight: 'calc(100vh - 10rem)',
       }}
     >
-      <div className="text-center">
+      <div className="text-center py-[20vh] md:py-0">
         <img
           src="/images/cyber.jpg"
           alt="Ash Martian"
