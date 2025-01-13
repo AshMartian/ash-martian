@@ -4,6 +4,7 @@ export interface WorkHistoryItem {
   company: string;
   title: string;
   image?: string;
+  url?: string;
   period: string;
   startYear: number;
   endYear: number;
@@ -15,6 +16,7 @@ const history: WorkHistoryItem[] = [
     company: 'Peninsula School District',
     title: 'Data Integration Analyst',
     image: '/psd-logo.png',
+    url: 'https://www.psd401.net',
     period: '2011 - 2018',
     startYear: 2011,
     endYear: 2018,
@@ -29,6 +31,7 @@ const history: WorkHistoryItem[] = [
     company: 'Boston Consulting Group',
     title: 'Sr. Software Engineer',
     image: '/bcg-logo.png',
+    url: 'https://www.bcg.com',
     period: '2018 - 2021',
     startYear: 2018,
     endYear: 2021,
@@ -43,12 +46,13 @@ const history: WorkHistoryItem[] = [
     company: 'CharacterStrong',
     title: 'Sr. Platform Architect',
     image: '/cs-logo.png',
+    url: 'https://characterstrong.com',
     period: '2021 - 2024',
     startYear: 2021,
     endYear: 2024,
     description: [
       'Scaled from 16k to 200k+ monthly user sessions',
-      'Led growth from 1 to 18 engineers',
+      'Led growth from 1 to 18 engineers, 20 to 100 employees',
       'Implemented comprehensive Backend Serverless API',
       'Created data-driven curriculum CMS',
     ],
@@ -57,6 +61,7 @@ const history: WorkHistoryItem[] = [
     company: 'Blue Origin',
     title: 'Lead Software Engineer',
     image: '/blue-logo.png',
+    url: 'https://www.blueorigin.com',
     period: '2024 - Present',
     startYear: 2024,
     endYear: new Date().getFullYear(),
@@ -173,7 +178,7 @@ export function WorkHistory() {
               >
                 {/* Position indicator bar */}
                 <div
-                  className="absolute left-[-1rem] md:left-[-4rem] top-0 w-16 md:w-40 bg-black/30 rounded-r-[2rem]"
+                  className="absolute left-[-1rem] md:left-[-3rem] top-0 w-16 md:w-32 bg-black/30 rounded-r-[2rem]"
                   style={{
                     height: '100%',
                     transform: 'translateX(-50%)',
@@ -186,15 +191,23 @@ export function WorkHistory() {
 
                 {/* Content card */}
                 <div
-                  className="bg-gray-800/50 backdrop-blur-lg rounded-lg p-4 md:p-6 ml-4 w-full transition-all duration-500"
+                  className="bg-gray-800/50 backdrop-blur-lg rounded-lg p-4 md:p-6 ml-4 w-full transition-all duration-500 
+                    hover:bg-gray-700/50 hover:shadow-[0_0_15px_rgba(255,255,255,0.2)]"
                   style={{
+                    cursor: item.url ? 'pointer' : 'default',
                     transform: `translateY(var(--translate-${index}, 0px))`,
                     display: 'flex',
                     gap: '1rem',
                   }}
+                  onClick={() => item.url && window.open(item.url, '_blank')}
+                  onKeyDown={(e) =>
+                    e.key === 'Enter' && item.url && window.open(item.url, '_blank')
+                  }
+                  tabIndex={item.url ? 0 : -1}
+                  role={item.url ? 'link' : 'article'}
                 >
                   {item.image && (
-                    <div className="hidden md:block w-24 h-24 flex-shrink-0 rounded-full overflow-hidden">
+                    <div className="block w-16 h-16 md:w-36 md:h-36 flex-shrink-0 rounded-full overflow-hidden">
                       <img
                         src={item.image}
                         alt={item.company}

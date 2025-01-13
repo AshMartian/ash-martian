@@ -35,5 +35,5 @@ export function Card({ title, description, image, url, icon }: CardProps) {
     );
   }
 
-  return <div className={cardClasses}>{content}</div>;
+  return <div className={`${cardClasses} cursor-default`}>{content}</div>;
 }
