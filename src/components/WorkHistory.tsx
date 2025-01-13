@@ -21,9 +21,9 @@ const history: WorkHistoryItem[] = [
     startYear: 2011,
     endYear: 2018,
     description: [
-      'Deployed software + imaging for 5,000+ devices',
+      'Deployed software + OS imaging for 5,000+ devices (Windows + Mac)',
       'Top 10 AWS education sector user in US',
-      'Developed in-house solutions serving 100k+ monthly requests',
+      'Developed in-house solutions serving 100k+ monthly requests using linux containerization',
       'Engineered KGHP-FM radio station digital AutoDJ infrastructure',
     ],
   },
@@ -120,7 +120,7 @@ export function WorkHistory() {
 
   return (
     <section className="py-20 min-h-screen work-history-section">
-      <div className="min-h-[min-content] md:container md:mx-auto md:px-6">
+      <div className="min-h-[min-content] lg:container lg:mx-auto lg:px-6">
         <h2 className="text-3xl md:text-4xl font-bold mb-12 text-center [text-shadow:_0_3px_5px_rgb(0_0_0_/_80%)]">
           Work History
         </h2>
