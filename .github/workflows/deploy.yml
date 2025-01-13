@@ -36,12 +36,15 @@ jobs:
       - name: Upload to S3
         run: |
           aws s3 sync dist/ s3://${{ secrets.S3_BUCKET }} \
-            --delete --size-only \
+            --delete \
             --cache-control "max-age=31536000,public" \
-            --acl public-read \
-            --exclude "*" \
-            --include "*" \
-            --include "*.html" --include "*.json" --cache-control "no-cache,no-store,must-revalidate"
+            --exclude "*.html" \
+            --exclude "*.json"
+          aws s3 sync dist/ s3://${{ secrets.S3_BUCKET }} \
+            --delete \
+            --cache-control "no-cache,no-store,must-revalidate" \
+            --include "*.html" \
+            --include "*.json"
 
       - name: Invalidate CloudFront Distribution
         run: |
