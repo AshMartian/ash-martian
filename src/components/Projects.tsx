@@ -1,4 +1,7 @@
-import { Card, CardProps } from './ui/Card';
+import {
+  Card,
+  CardProps,
+} from './ui/Card';
 
 const projects: CardProps[] = [
   {
@@ -41,7 +44,7 @@ const projects: CardProps[] = [
 
 export function Projects() {
   return (
-    <section className="py-20">
+    <section className="py-[30vh] md:py-20">
       <div className="container mx-auto px-6">
         <h2 className="text-4xl font-bold mb-8 text-center [text-shadow:_0_3px_5px_rgb(0_0_0_/_80%)]">
           Projects

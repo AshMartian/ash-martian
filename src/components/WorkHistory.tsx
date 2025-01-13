@@ -119,7 +119,7 @@ export function WorkHistory() {
   }, [totalYears]);
 
   return (
-    <section className="py-20 min-h-screen work-history-section">
+    <section className="py-[30vh] md:py-20 min-h-screen work-history-section">
       <div className="min-h-[min-content] lg:container lg:mx-auto lg:px-6">
         <h2 className="text-3xl md:text-4xl font-bold mb-12 text-center [text-shadow:_0_3px_5px_rgb(0_0_0_/_80%)]">
           Work History

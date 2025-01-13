@@ -1,6 +1,6 @@
 export function SpaceEssay() {
   return (
-    <section className="py-20 min-h-[90vh] relative flex flex-col justify-center items-center">
+    <section className="py-[30vh] md:py-20 min-h-[90vh] relative flex flex-col justify-center items-center">
       <h2 className="text-4xl font-bold mb-12 text-center [text-shadow:_0_3px_5px_rgb(0_0_0_/_80%)]">
         My Vision for Human Spaceflight
       </h2>

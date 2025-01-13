@@ -7,7 +7,10 @@ import {
   IconRobot,
 } from '@tabler/icons-react';
 
-import { Card, CardProps } from './ui/Card';
+import {
+  Card,
+  CardProps,
+} from './ui/Card';
 
 const hobbies: CardProps[] = [
   {
@@ -57,7 +60,7 @@ const hobbies: CardProps[] = [
 
 export function Hobbies() {
   return (
-    <section className="py-20 min-h-screen">
+    <section className="py-[30vh] md:py-20 min-h-screen">
       <div className="container mx-auto px-6">
         <h2 className="text-4xl font-bold mb-8 text-center [text-shadow:_0_3px_5px_rgb(0_0_0_/_80%)]">
           Hobbies & Interests
