@@ -3,6 +3,7 @@ import { useEffect } from 'react';
 export interface WorkHistoryItem {
   company: string;
   title: string;
+  image?: string;
   period: string;
   startYear: number;
   endYear: number;
@@ -13,6 +14,7 @@ const history: WorkHistoryItem[] = [
   {
     company: 'Peninsula School District',
     title: 'Data Integration Analyst',
+    image: '/psd-logo.png',
     period: '2011 - 2018',
     startYear: 2011,
     endYear: 2018,
@@ -26,6 +28,7 @@ const history: WorkHistoryItem[] = [
   {
     company: 'Boston Consulting Group',
     title: 'Sr. Software Engineer',
+    image: '/bcg-logo.png',
     period: '2018 - 2021',
     startYear: 2018,
     endYear: 2021,
@@ -39,6 +42,7 @@ const history: WorkHistoryItem[] = [
   {
     company: 'CharacterStrong',
     title: 'Sr. Platform Architect',
+    image: '/cs-logo.png',
     period: '2021 - 2024',
     startYear: 2021,
     endYear: 2024,
@@ -52,6 +56,7 @@ const history: WorkHistoryItem[] = [
   {
     company: 'Blue Origin',
     title: 'Lead Software Engineer',
+    image: '/blue-logo.png',
     period: '2024 - Present',
     startYear: 2024,
     endYear: new Date().getFullYear(),
@@ -110,25 +115,30 @@ export function WorkHistory() {
 
   return (
     <section className="py-20 min-h-screen work-history-section">
-      <div className="container mx-auto px-6 min-h-[min-content]">
-        <h2 className="text-4xl font-bold mb-12 text-center [text-shadow:_0_3px_5px_rgb(0_0_0_/_80%)]">
+      <div className="min-h-[min-content] md:container md:mx-auto md:px-6">
+        <h2 className="text-3xl md:text-4xl font-bold mb-12 text-center [text-shadow:_0_3px_5px_rgb(0_0_0_/_80%)]">
           Work History
         </h2>
 
         <div className="relative flex min-h-[min-content]">
           {/* Vertical Timeline */}
-          <div className="relative w-32 mr-8 z-50" style={{ height: `${years.length * 5}rem` }}>
+          <div
+            className="relative w-12 md:w-24 md:w-32 md:mr-8 z-50"
+            style={{ height: `${years.length * 6}rem` }}
+          >
             <div className="absolute w-0.5 bg-white/30 top-0 bottom-0 left-4" />
 
             {/* Timeline years */}
             {years.map((year, i) => (
               <div
                 key={year}
-                className="absolute left-0 w-8 flex items-center"
+                className="absolute left-0 w-8 flex items-center text-xs md:text-sm"
                 style={{ top: `${(i / (totalYears - 1)) * 100}%` }}
               >
-                <div className="w-3 h-[1px] bg-white/30 mr-2" />
-                <span className="text-sm font-medium text-white/70 ml-5">{year}</span>
+                <div className="w-2 md:w-3 h-[1px] bg-white/30 mr-1 md:mr-2" />
+                <span className="text-xs md:text-sm font-medium text-white/70 ml-3 md:ml-5">
+                  {year}
+                </span>
               </div>
             ))}
 
@@ -144,7 +154,7 @@ export function WorkHistory() {
             className="flex-1 relative"
             style={{
               minHeight: 'min-content',
-              height: `${years.length * 5}rem`,
+              height: `${years.length * 6}rem`,
               marginBottom: '5rem',
             }}
           >
@@ -163,7 +173,7 @@ export function WorkHistory() {
               >
                 {/* Position indicator bar */}
                 <div
-                  className="absolute left-[-4rem] top-0 w-40 bg-black/30 rounded-r-[2rem]"
+                  className="absolute left-[-1rem] md:left-[-4rem] top-0 w-16 md:w-40 bg-black/30 rounded-r-[2rem]"
                   style={{
                     height: '100%',
                     transform: 'translateX(-50%)',
@@ -176,20 +186,34 @@ export function WorkHistory() {
 
                 {/* Content card */}
                 <div
-                  className="bg-gray-800/50 backdrop-blur-lg rounded-lg p-6 ml-4 w-full transition-all duration-500"
+                  className="bg-gray-800/50 backdrop-blur-lg rounded-lg p-4 md:p-6 ml-4 w-full transition-all duration-500"
                   style={{
                     transform: `translateY(var(--translate-${index}, 0px))`,
+                    display: 'flex',
+                    gap: '1rem',
                   }}
                 >
-                  <h3 className="text-2xl font-bold mb-2 flex space-x-1 justify-between">
-                    <span>{item.company}</span> <span className="text-gray-400">{item.period}</span>
-                  </h3>
-                  <h4 className="text-xl mb-4 text-gray-300">{item.title}</h4>
-                  <ul className="list-disc list-inside space-y-2">
-                    {item.description.map((desc, i) => (
-                      <li key={i}>{desc}</li>
-                    ))}
-                  </ul>
+                  {item.image && (
+                    <div className="hidden md:block w-24 h-24 flex-shrink-0 rounded-full overflow-hidden">
+                      <img
+                        src={item.image}
+                        alt={item.company}
+                        className="w-full h-full object-contain"
+                      />
+                    </div>
+                  )}
+                  <div className="flex-1">
+                    <h3 className="text-lg md:text-2xl font-bold mb-2 flex flex-col md:flex-row md:space-x-1 md:justify-between">
+                      <span>{item.company}</span>{' '}
+                      <span className="text-gray-400">{item.period}</span>
+                    </h3>
+                    <h4 className="text-xl mb-4 text-gray-300">{item.title}</h4>
+                    <ul className="hidden md:block list-disc list-inside space-y-2">
+                      {item.description.map((desc, i) => (
+                        <li key={i}>{desc}</li>
+                      ))}
+                    </ul>
+                  </div>
                 </div>
               </div>
             ))}
