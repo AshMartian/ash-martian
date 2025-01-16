@@ -7,10 +7,7 @@ import {
   IconRobot,
 } from '@tabler/icons-react';
 
-import {
-  Card,
-  CardProps,
-} from './ui/Card';
+import { Card, CardProps } from './ui/Card';
 
 const hobbies: CardProps[] = [
   {

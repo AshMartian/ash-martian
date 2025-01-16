@@ -46,10 +46,13 @@ export function Stars({ count = 5000, mousePosition, scrollPosition }: StarsProp
     return { positions, sizes, colors };
   }, [count]);
 
+  const baseRotation = useRef(0);
+
   useFrame(() => {
     if (points.current) {
+      baseRotation.current += 0.0005;
       // Rotate stars in opposition to Mars to create parallax effect
-      points.current.rotation.y = scrollPosition * 0.001;
+      points.current.rotation.y = scrollPosition * 0.001 - baseRotation.current;
       points.current.rotation.y += (mousePosition.x * 0.02 - points.current.rotation.y) * 0.2;
       points.current.rotation.x += (-mousePosition.y * 0.03 - points.current.rotation.x) * 0.3;
     }
